@@ -58,10 +58,8 @@ def login(request):
 
         if user is not None:
             try:
-
                 cart = Cart.objects.get(cart_id=_cart_id(request))
                 is_cart_item_exists = CartItem.objects.filter(cart=cart).exists()
-
                 if is_cart_item_exists:
                     cart_item = CartItem.objects.filter(cart=cart)
 
@@ -78,8 +76,6 @@ def login(request):
                         ex_var_list.append(list(existing_variation))
                         id.append(item.id)
 
-                    ##product_variation = [1, 2, 3, 4, 6]
-                    #ex_var_list = [4,6,3,5]
 
                     for pr in product_variation:
                         if pr in ex_var_list:
@@ -107,7 +103,6 @@ def login(request):
                 if 'next' in params:
                     nextPage = params['next']
                     return redirect(nextPage)
-
             except:
                 return redirect('dashboard')
         else:
