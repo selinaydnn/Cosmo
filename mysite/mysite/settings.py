@@ -85,6 +85,9 @@ AUTH_USER_MODEL = 'accounts.Account'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
+        "HOST": '/cloudsql/warm-particle-424716-k1:us-central1:polls-instances',
+        "USER": 'selin',
+        "PASSWORD": 'selin2002',
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
